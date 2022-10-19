@@ -29,7 +29,7 @@ btnopt.forEach(operator => {
             case "/":
                 screen.textContent = final / Number(screen.textContent);
                 break;
-                
+
             case "*":
                 screen.textContent = final * Number(screen.textContent);
                 break;
@@ -61,7 +61,7 @@ function equal() {
 function timeout() {
     setTimeout(
         equal,
-        2000
+        500
     )
 }
 
@@ -80,11 +80,10 @@ function btnc() {
     document.getElementById("screen").innerText = newscreen;
 }
 
-function optTest() {
+function optComma() {
     let screen = (document.getElementById("screen").innerText);
     document.getElementById("screen").innerText = screen + ".";
 }
-
 
 
 
