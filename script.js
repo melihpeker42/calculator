@@ -5,8 +5,6 @@ let optState = false;
 let opt = "";
 let final = 0;
 
-
-
 btnnumber.forEach(Number => {
     Number.addEventListener("click", showNumber);
 
@@ -20,9 +18,6 @@ btnnumber.forEach(Number => {
     }
 });
 
-
-
-
 btnopt.forEach(operator => {
     operator.addEventListener("click", calculator);
 
@@ -34,59 +29,34 @@ btnopt.forEach(operator => {
             case "/":
                 screen.textContent = final / Number(screen.textContent);
                 break;
-
             case "*":
                 screen.textContent = final * Number(screen.textContent);
                 break;
-
             case "+":
                 screen.textContent = final + Number(screen.textContent);
                 break;
-
             case "-":
                 screen.textContent = final - Number(screen.textContent);
                 break;
-
             case "%":
                 screen.textContent = final * Number(screen.textContent) / 100;
                 break;
-
             case "x²":
                 screen.textContent = final ** Number(screen.textContent);
                 break;
-
-
-
-
-
             case "=":
                 final = Number(screen.textContent);
                 break;
-
-
         }
         final = Number(screen.textContent);
         opt = newopt;
-
-
-
     }
-
-
-}
-
-)
-
-
-
-
-
+})
 
 function equal() {
 
     localStorage.setItem("pastTransaction", document.getElementById("screen").innerText);
 }
-
 
 function timeout() {
     setTimeout(
@@ -95,18 +65,13 @@ function timeout() {
     )
 }
 
-
 function Clear() {
-
     screen.textContent = "";
-
-
 }
 
 function past() {
     let b = localStorage.getItem("pastTransaction");
     document.getElementById("screen").innerText = b;
-
 }
 
 function btnc() {
@@ -114,7 +79,3 @@ function btnc() {
     let newscreen = screen.slice(0, -1)
     document.getElementById("screen").innerText = newscreen;
 }
-
-
-
-
