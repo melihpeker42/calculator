@@ -29,6 +29,7 @@ btnopt.forEach(operator => {
             case "/":
                 screen.textContent = final / Number(screen.textContent);
                 break;
+                
             case "*":
                 screen.textContent = final * Number(screen.textContent);
                 break;
@@ -81,5 +82,42 @@ function btnc() {
 
 function optTest() {
     let screen = (document.getElementById("screen").innerText);
-    document.getElementById("screen").innerText = screen + ",";
+    document.getElementById("screen").innerText = screen + ".";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
