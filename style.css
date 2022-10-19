@@ -1,4 +1,17 @@
 button{
     height: 50px;
     width: 50px;
+    background-color: #000000;
+    color: #ffffff;
+}
+button:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+.equal{
+    width: 80px;
+    
+}
+.equal:hover{
+    background-color: #66ff00;
 }

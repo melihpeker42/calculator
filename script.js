@@ -1,68 +1,120 @@
-let btnnumber= document.querySelectorAll("#btnnumber");
+let btnnumber = document.querySelectorAll("#btnnumber");
 let screen = document.querySelector("#screen");
 let btnopt = document.querySelectorAll("#btnopt");
-let optState=false;
-let opt="";
-let final=0;
+let optState = false;
+let opt = "";
+let final = 0;
 
 
 
 btnnumber.forEach(Number => {
-    Number.addEventListener("click",showNumber);
+    Number.addEventListener("click", showNumber);
 
-    function showNumber(){
-       
-        if (screen.textContent=="0" || optState) {
-            screen.textContent="";  
+    function showNumber() {
+
+        if (screen.textContent == "0" || optState) {
+            screen.textContent = "";
         }
         screen.textContent += this.textContent;
-        optState=false;
+        optState = false;
     }
 });
 
 
 
 
+btnopt.forEach(operator => {
+    operator.addEventListener("click", calculator);
 
+    function calculator() {
+        optState = true;
+        let newopt = this.textContent;
 
-btnopt.forEach(operator => 
-    
-    {
- operator.addEventListener("click",calculator);
+        switch (opt) {
+            case "/":
+                screen.textContent = final / Number(screen.textContent);
+                break;
 
- function calculator() {
-    optState=true;
-    let newopt=this.textContent;
+            case "*":
+                screen.textContent = final * Number(screen.textContent);
+                break;
 
-   switch (opt) {
-    case "/":
-    screen.textContent = final / Number(screen.textContent);
-    break;
+            case "+":
+                screen.textContent = final + Number(screen.textContent);
+                break;
 
-    case "*":
-        screen.textContent = final * Number(screen.textContent);
-        break;
+            case "-":
+                screen.textContent = final - Number(screen.textContent);
+                break;
 
-        case "+":
-    screen.textContent = final + Number(screen.textContent);
-    break;
-    case "-":
-    screen.textContent = final - Number(screen.textContent);
-    break;
-    case "=":
-    final= Number(screen.textContent);
-    break;
+            case "%":
+                screen.textContent = final * Number(screen.textContent) / 100;
+                break;
 
-
-   }
-   final = Number(screen.textContent);
-   opt = newopt;
+            case "x²":
+                screen.textContent = final ** Number(screen.textContent);
+                break;
 
 
 
- }
- 
+
+
+            case "=":
+                final = Number(screen.textContent);
+                break;
+
+
+        }
+        final = Number(screen.textContent);
+        opt = newopt;
+
+
 
     }
-    
+
+
+}
+
+)
+
+
+
+
+
+
+function equal() {
+
+    localStorage.setItem("pastTransaction", document.getElementById("screen").innerText);
+}
+
+
+function timeout() {
+    setTimeout(
+        equal,
+        2000
     )
+}
+
+
+function Clear() {
+
+    screen.textContent = "";
+
+
+}
+
+function past() {
+    let b = localStorage.getItem("pastTransaction");
+    document.getElementById("screen").innerText = b;
+
+}
+
+function btnc() {
+    let screen = (document.getElementById("screen").innerText);
+    let newscreen = screen.slice(0, -1)
+    document.getElementById("screen").innerText = newscreen;
+}
+
+
+
+
