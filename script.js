@@ -54,7 +54,6 @@ btnopt.forEach(operator => {
 })
 
 function equal() {
-
     localStorage.setItem("pastTransaction", document.getElementById("screen").innerText);
 }
 
