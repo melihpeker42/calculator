@@ -78,3 +78,8 @@ function btnc() {
     let newscreen = screen.slice(0, -1)
     document.getElementById("screen").innerText = newscreen;
 }
+
+function optTest() {
+    let screen = (document.getElementById("screen").innerText);
+    document.getElementById("screen").innerText = screen + ",";
+}
