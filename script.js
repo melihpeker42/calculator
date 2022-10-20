@@ -45,12 +45,15 @@ btnopt.forEach(operator => {
             case "x²":
                 screen.textContent = final ** Number(screen.textContent);
                 break;
+
+
             case "=":
                 final = Number(screen.textContent);
                 break;
         }
         final = Number(screen.textContent);
         opt = newopt;
+
     }
 })
 
@@ -61,7 +64,7 @@ function equal() {
 function timeout() {
     setTimeout(
         equal,
-        500
+        300
     )
 }
 
@@ -85,10 +88,20 @@ function optComma() {
     document.getElementById("screen").innerText = screen + ".";
 }
 
+function parant() {
+    let screen = (document.getElementById("screen").innerText);
+    document.getElementById("screen").innerText = screen + "(";
+}
+function parante() {
+    let screen = (document.getElementById("screen").innerText);
+    document.getElementById("screen").innerText = screen + ")";
+}
 
 
-
-
+function root() {
+    let a = document.getElementById("screen").innerText;
+    document.getElementById("screen").innerText = Math.sqrt(a);
+}
 
 
 
