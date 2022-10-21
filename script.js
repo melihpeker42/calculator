@@ -5,6 +5,8 @@ let optState = false;
 let opt = "";
 let final = 0;
 
+
+
 btnnumber.forEach(Number => {
     Number.addEventListener("click", showNumber);
 
@@ -13,7 +15,8 @@ btnnumber.forEach(Number => {
         if (screen.textContent == "0" || optState) {
             screen.textContent = "";
         }
-        screen.textContent += this.textContent;
+       screen.textContent += this.textContent;
+        
         optState = false;
     }
 });
@@ -57,9 +60,27 @@ btnopt.forEach(operator => {
     }
 })
 
+
+
+
+
+
+
 function equal() {
+
     localStorage.setItem("pastTransaction", document.getElementById("screen").innerText);
+
+
+
+
+
 }
+
+
+
+
+
+
 
 function timeout() {
     setTimeout(
@@ -74,7 +95,9 @@ function Clear() {
 
 function past() {
     let b = localStorage.getItem("pastTransaction");
+
     document.getElementById("screen").innerText = b;
+
 }
 
 function btnc() {
@@ -88,14 +111,8 @@ function optComma() {
     document.getElementById("screen").innerText = screen + ".";
 }
 
-function parant() {
-    let screen = (document.getElementById("screen").innerText);
-    document.getElementById("screen").innerText = screen + "(";
-}
-function parante() {
-    let screen = (document.getElementById("screen").innerText);
-    document.getElementById("screen").innerText = screen + ")";
-}
+
+
 
 
 function root() {
