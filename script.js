@@ -15,7 +15,7 @@ btnnumber.forEach(Number => {
         if (screen.textContent == "0" || optState) {
             screen.textContent = "";
         }
-       screen.textContent += this.textContent;
+        screen.textContent += this.textContent;
         
         optState = false;
     }
@@ -61,31 +61,19 @@ btnopt.forEach(operator => {
 })
 
 
-
-
-
-
+let arr = []
 
 function equal() {
 
-    localStorage.setItem("pastTransaction", document.getElementById("screen").innerText);
-
-
-
-
+    arr.push(screen.textContent);
+    localStorage.setItem("pastTransaction", arr);
 
 }
-
-
-
-
-
-
 
 function timeout() {
     setTimeout(
         equal,
-        300
+        200
     )
 }
 
@@ -95,8 +83,7 @@ function Clear() {
 
 function past() {
     let b = localStorage.getItem("pastTransaction");
-
-    document.getElementById("screen").innerText = b;
+    document.getElementById("screen").innerText = arr[arr.length - 2];
 
 }
 
@@ -110,10 +97,6 @@ function optComma() {
     let screen = (document.getElementById("screen").innerText);
     document.getElementById("screen").innerText = screen + ".";
 }
-
-
-
-
 
 function root() {
     let a = document.getElementById("screen").innerText;
