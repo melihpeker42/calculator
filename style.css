@@ -1,20 +1,23 @@
-#calculator-grid {
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%,-50%);
- 
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
-
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     color: #000000;
 
 }
 
 .equal {
-    width: 105px;
+    width: 145px;
     background-color: #5ee045;
+}
+#screen{
+ position: absolute;
+ top: 28%;
+ left: 39%;
 }

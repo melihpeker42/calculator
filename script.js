@@ -5,6 +5,11 @@ let optState = false;
 let opt = "";
 let final = 0;
 
+// let a=NaN;
+// a=a||0;
+// console.log(a);
+ 
+
 
 
 btnnumber.forEach(Number => {
@@ -20,6 +25,9 @@ btnnumber.forEach(Number => {
         optState = false;
     }
 });
+
+
+
 
 btnopt.forEach(operator => {
     operator.addEventListener("click", calculator);
@@ -54,11 +62,18 @@ btnopt.forEach(operator => {
                 final = Number(screen.textContent);
                 break;
         }
+          
         final = Number(screen.textContent);
         opt = newopt;
+        //screen.textContent+=this.textContent;
 
     }
 })
+
+function number(){
+   
+
+}  
 
 
 let arr = []
@@ -67,7 +82,10 @@ function equal() {
 
     arr.push(screen.textContent);
     localStorage.setItem("pastTransaction", arr);
-
+    number=NaN;
+    if(isNaN(number))number=0;
+    console.log(number);
+    document.getElementById("screen").innerHTML;
 }
 
 function timeout() {
@@ -95,6 +113,7 @@ function btnc() {
 
 function optComma() {
     let screen = (document.getElementById("screen").innerText);
+    
     document.getElementById("screen").innerText = screen + ".";
 }
 
