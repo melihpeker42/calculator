@@ -5,9 +5,7 @@ let optState = false;
 let opt = "";
 let final = 0;
 
-// let a=NaN;
-// a=a||0;
-// console.log(a);
+
 
 
 
@@ -73,7 +71,7 @@ btnopt.forEach(operator => {
         document.getElementById("screen").innerText="Division by zero is undefined";
          
         
-        //screen.textContent+=this.textContent;
+       // screen.textContent+=this.textContent;
 
     }
 })
