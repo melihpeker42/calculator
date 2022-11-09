@@ -8,7 +8,7 @@ let final = 0;
 // let a=NaN;
 // a=a||0;
 // console.log(a);
- 
+
 
 
 
@@ -21,7 +21,7 @@ btnnumber.forEach(Number => {
             screen.textContent = "";
         }
         screen.textContent += this.textContent;
-        
+
         optState = false;
     }
 });
@@ -56,24 +56,29 @@ btnopt.forEach(operator => {
             case "x²":
                 screen.textContent = final ** Number(screen.textContent);
                 break;
-
+            
 
             case "=":
                 final = Number(screen.textContent);
                 break;
         }
-          
+
         final = Number(screen.textContent);
         opt = newopt;
+        if (isNaN(final))
+            document.getElementById("screen").innerText = "Division by zero is undefined";   
+                
+       
+        if(final=="Infinity")
+        document.getElementById("screen").innerText="Division by zero is undefined";
+         
+        
         //screen.textContent+=this.textContent;
 
     }
 })
 
-function number(){
-   
 
-}  
 
 
 let arr = []
@@ -82,9 +87,6 @@ function equal() {
 
     arr.push(screen.textContent);
     localStorage.setItem("pastTransaction", arr);
-    number=NaN;
-    if(isNaN(number))number=0;
-    console.log(number);
     document.getElementById("screen").innerHTML;
 }
 
@@ -113,7 +115,7 @@ function btnc() {
 
 function optComma() {
     let screen = (document.getElementById("screen").innerText);
-    
+
     document.getElementById("screen").innerText = screen + ".";
 }
 
