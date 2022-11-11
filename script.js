@@ -4,8 +4,8 @@ let btnopt = document.querySelectorAll("#btnopt");
 let optState = false;
 let opt = "";
 let final = 0;
-
-
+let Comma = true;
+let optscreen=true;
 
 
 
@@ -19,7 +19,7 @@ btnnumber.forEach(Number => {
             screen.textContent = "";
         }
         screen.textContent += this.textContent;
-
+        
         optState = false;
     }
 });
@@ -49,30 +49,29 @@ btnopt.forEach(operator => {
                 screen.textContent = final - Number(screen.textContent);
                 break;
             case "%":
-                screen.textContent = final * Number(screen.textContent) / 100;
+                screen.textContent = Number(screen.textContent) / 100;
                 break;
             case "x²":
                 screen.textContent = final ** Number(screen.textContent);
                 break;
-            
+
 
             case "=":
                 final = Number(screen.textContent);
                 break;
+
         }
 
         final = Number(screen.textContent);
         opt = newopt;
         if (isNaN(final))
-            document.getElementById("screen").innerText = "Division by zero is undefined";   
-                
-       
-        if(final=="Infinity")
-        document.getElementById("screen").innerText="Division by zero is undefined";
-         
-        
-       // screen.textContent+=this.textContent;
+            document.getElementById("screen").innerText = "Division by zero is undefined";
 
+
+        if (final == "Infinity")
+            document.getElementById("screen").innerText = "Division by zero is undefined";
+
+        screen.textContent+=this.textContent;
     }
 })
 
@@ -86,6 +85,12 @@ function equal() {
     arr.push(screen.textContent);
     localStorage.setItem("pastTransaction", arr);
     document.getElementById("screen").innerHTML;
+
+    
+    let str=(document.getElementById("screen").innerText);
+    let array=str.split("/");
+    console.log(array);
+    
 }
 
 function timeout() {
@@ -97,6 +102,8 @@ function timeout() {
 
 function Clear() {
     screen.textContent = "";
+
+
 }
 
 function past() {
@@ -109,12 +116,23 @@ function btnc() {
     let screen = (document.getElementById("screen").innerText);
     let newscreen = screen.slice(0, -1)
     document.getElementById("screen").innerText = newscreen;
+
+    if (document.getElementById("screen").innerText.includes(".")) {
+        Comma = false;
+    } else {
+        Comma = true;
+    }
 }
 
 function optComma() {
-    let screen = (document.getElementById("screen").innerText);
 
-    document.getElementById("screen").innerText = screen + ".";
+    if (Comma) {
+        let screen = (document.getElementById("screen").innerText);
+
+        document.getElementById("screen").innerText = screen + ".";
+        Comma = false;
+    }
+
 }
 
 function root() {
